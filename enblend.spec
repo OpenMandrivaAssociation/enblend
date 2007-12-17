@@ -10,7 +10,6 @@ Source0:	%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	boost-devel
 BuildRequires:	libtiff-devel
 
