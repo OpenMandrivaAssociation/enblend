@@ -5,7 +5,7 @@
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Summary:	Enblend is a tool for compositing images
+Summary:	Tool for compositing images
 Source0:	%{name}-%{version}.tar.bz2
 License:	GPL
 Group:		Graphics
