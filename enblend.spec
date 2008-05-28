@@ -1,5 +1,5 @@
 %define name enblend
-%define version 2.5
+%define version 3.0
 %define release %mkrel 2
 
 Name:		%{name}
@@ -7,12 +7,17 @@ Version:	%{version}
 Release:	%{release}
 Summary:	Tool for compositing images
 Source0:	%{name}-%{version}.tar.bz2
+Patch:		enblend-gcc43.patch
 License:	GPL
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	boost-devel
 BuildRequires:	libtiff-devel
+BuildRequires:  libglew-devel
+BuildRequires:  libmesaglut-devel
+BuildRequires:  liblcms-devel
+BuildRequires:  libxmi-devel
 
 %description
 Enblend is a tool for compositing images. Given a set of images that overlap 
@@ -21,6 +26,7 @@ between the images is invisible, or at least very difficult to see.
 
 %prep 
 %setup -q
+%patch -p1 -b .gcc43
 
 %build
 %configure
