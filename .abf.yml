@@ -1,2 +1,4 @@
+removed_sources:
+  enblend-enfuse-4.0.tar.gz: 34c3a5ce11c6ef0ef520d8a15a3cb6a94a567033
 sources:
-  "enblend-enfuse-4.0.tar.gz": 34c3a5ce11c6ef0ef520d8a15a3cb6a94a567033
+  enblend-enfuse-4.1.2.tar.gz: 3259e91bee9dee17d7fb017e7e5fa0060b9edcf1

@@ -1,23 +1,20 @@
 Summary:	Tool for compositing images
 Name:		enblend
-Version:	4.0
-Release:	10
+Version:	4.1.2
+Release:	1
 License:	GPLv2+
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
 Source0:	http://downloads.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-%{version}/enblend-enfuse-%{version}.tar.gz
-Patch0:		enblend-4.0-libpng14.patch
-Patch1:		enblend-4.0-libpng15.patch
-Patch2:		enblend-4.0-boost-1.50.patch
-Patch3:		enblend-4.0-boost-1.50-3.patch
+Patch0:		enblend-enfuse-4.1.1-texinfo.patch
 BuildRequires:	boost-devel
-BuildRequires:	libxmi-devel
 BuildRequires:	tiff-devel
-BuildRequires:	perl(Time::Zone)
 BuildRequires:	pkgconfig(glew)
 BuildRequires:	pkgconfig(glut)
-BuildRequires:	pkgconfig(lcms)
+BuildRequires:	pkgconfig(lcms2)
+BuildRequires:	vigra-devel
 BuildRequires:	pkgconfig(libpng)
+BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(IlmBase)
 BuildRequires:	pkgconfig(OpenEXR)
 Provides:	enfuse = %{version}-%{release}
@@ -28,14 +25,13 @@ in some irregular way, Enblend overlays them in such a way that the seam
 between the images is invisible, or at least very difficult to see.
 
 %prep
-%setup -q -n enblend-enfuse-4.0-753b534c819d
-%patch0 -p0
-%patch1 -p0
-%patch2 -p1
+%setup -q -n enblend-enfuse-%{version}
+%apply_patches
+%{__sed} -i -e 's/src:://g;s/CFG::/CFG_/g' doc/*.texi doc/define2set.pl configure.in
 
 %build
+autoreconf -fiv
 %configure2_5x --with-boost-filesystem
-sed -i s,"-lboost_filesystem","-lboost_filesystem -lboost_system",g src/Makefile
 %make
 
 
@@ -43,7 +39,7 @@ sed -i s,"-lboost_filesystem","-lboost_filesystem -lboost_system",g src/Makefile
 %makeinstall_std
 
 %files
-%doc AUTHORS NEWS README VIGRA_LICENSE
+%doc AUTHORS NEWS README
 %{_bindir}/enblend
 %{_bindir}/enfuse
 %{_mandir}/man1/enblend.1.*
