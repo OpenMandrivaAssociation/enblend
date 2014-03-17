@@ -9,6 +9,7 @@ Source0:	http://downloads.sourceforge.net/project/enblend/enblend-enfuse/enblend
 Patch0:		enblend-enfuse-4.1.1-texinfo.patch
 BuildRequires:	boost-devel
 BuildRequires:	tiff-devel
+BuildRequires:	help2man
 BuildRequires:	pkgconfig(glew)
 BuildRequires:	pkgconfig(glut)
 BuildRequires:	pkgconfig(lcms2)
