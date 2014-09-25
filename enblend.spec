@@ -1,7 +1,7 @@
 Summary:	Tool for compositing images
 Name:		enblend
-Version:	4.1.2
-Release:	3
+Version:	4.1.3
+Release:	1
 License:	GPLv2+
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
