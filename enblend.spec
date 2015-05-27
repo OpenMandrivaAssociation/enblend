@@ -1,7 +1,7 @@
 Summary:	Tool for compositing images
 Name:		enblend
 Version:	4.1.3
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
@@ -32,7 +32,7 @@ between the images is invisible, or at least very difficult to see.
 
 %build
 autoreconf -fiv
-%configure2_5x --with-boost-filesystem
+%configure --with-boost-filesystem
 %make
 
 
