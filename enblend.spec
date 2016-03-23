@@ -1,12 +1,11 @@
 Summary:	Tool for compositing images
 Name:		enblend
-Version:	4.1.3
-Release:	5
+Version:	4.1.5
+Release:	1
 License:	GPLv2+
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
 Source0:	http://downloads.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-%{version}/enblend-enfuse-%{version}.tar.gz
-Patch0:		enblend-enfuse-4.1.1-texinfo.patch
 BuildRequires:	boost-devel
 BuildRequires:	tiff-devel
 BuildRequires:	help2man
@@ -28,7 +27,7 @@ between the images is invisible, or at least very difficult to see.
 %prep
 %setup -q -n enblend-enfuse-%{version}
 %apply_patches
-%{__sed} -i -e 's/src:://g;s/CFG::/CFG_/g' doc/*.texi doc/define2set.pl configure.in
+%{__sed} -i -e 's/src:://g;s/CFG::/CFG_/g' doc/*.texi doc/define2set.pl configure.ac
 
 %build
 autoreconf -fiv
