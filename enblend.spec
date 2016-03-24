@@ -30,6 +30,7 @@ between the images is invisible, or at least very difficult to see.
 %{__sed} -i -e 's/src:://g;s/CFG::/CFG_/g' doc/*.texi doc/define2set.pl configure.ac
 
 %build
+export CXX="%__cxx -std=c++11"
 autoreconf -fiv
 %configure --with-boost-filesystem
 %make
