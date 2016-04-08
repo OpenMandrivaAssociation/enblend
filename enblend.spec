@@ -17,6 +17,7 @@ BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(IlmBase)
 BuildRequires:	pkgconfig(OpenEXR)
+BuildRequires:	texlive-latex.bin
 Provides:	enfuse = %{version}-%{release}
 
 %description
