@@ -1,7 +1,7 @@
 Summary:	Tool for compositing images
 Name:		enblend
-Version:	4.1.5
-Release:	2
+Version:	4.2
+Release:	1
 License:	GPLv2+
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
@@ -27,7 +27,8 @@ between the images is invisible, or at least very difficult to see.
 %prep
 %setup -q -n enblend-enfuse-%{version}
 %apply_patches
-%{__sed} -i -e 's/src:://g;s/CFG::/CFG_/g' doc/*.texi doc/define2set.pl configure.ac
+rm -f configure
+%{__sed} -i -e 's/src:://g;s/CFG::/CFG_/g' configure.ac
 
 %build
 export CXX="%__cxx -std=c++11"
