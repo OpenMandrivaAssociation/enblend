@@ -14,6 +14,7 @@ BuildRequires:	pkgconfig(glut)
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	vigra-devel
 BuildRequires:	pkgconfig(libpng)
+BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(IlmBase)
 BuildRequires:	pkgconfig(OpenEXR)
