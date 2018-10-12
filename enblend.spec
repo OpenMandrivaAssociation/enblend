@@ -1,13 +1,14 @@
 Summary:	Tool for compositing images
 Name:		enblend
 Version:	4.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
 Source0:	http://downloads.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-%{version}/enblend-enfuse-%{version}.tar.gz
 BuildRequires:	boost-devel
-BuildRequires:	tiff-devel
+BuildRequires:	gomp-devel
+BuildRequires:	pkgconfig(libtiff-4)
 BuildRequires:	help2man
 BuildRequires:	pkgconfig(glew)
 BuildRequires:	pkgconfig(glut)
@@ -20,6 +21,9 @@ BuildRequires:	pkgconfig(IlmBase)
 BuildRequires:	pkgconfig(OpenEXR)
 BuildRequires:	texlive-pdftex.bin
 BuildRequires:	texlive-latex.bin
+BuildRequires:	texlive-kpathsea.bin
+BuildRequires:	texlive-kpathsea
+BuildRequires:	perl(DateTime::TimeZone)
 Provides:	enfuse = %{version}-%{release}
 
 %description
@@ -28,20 +32,18 @@ in some irregular way, Enblend overlays them in such a way that the seam
 between the images is invisible, or at least very difficult to see.
 
 %prep
-%setup -q -n enblend-enfuse-%{version}
-%apply_patches
+%autosetup -n enblend-enfuse-%{version} -p1
 rm -f configure
 %{__sed} -i -e 's/src:://g;s/CFG::/CFG_/g' configure.ac
 
 %build
 export CXX="%__cxx -std=c++11"
 autoreconf -fiv
-%configure --with-boost-filesystem
-%make
-
+%configure --with-boost-filesystem --enable-openmp
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc AUTHORS NEWS README
