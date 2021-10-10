@@ -1,11 +1,12 @@
 Summary:	Tool for compositing images
 Name:		enblend
 Version:	4.2
-Release:	4
+Release:	5
 License:	GPLv2+
 Group:		Graphics
 Url:		http://enblend.sourceforge.net
 Source0:	http://downloads.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-%{version}/enblend-enfuse-%{version}.tar.gz
+Patch0:		enblend-enfuse-4.2-limits.patch
 BuildRequires:	boost-devel
 BuildRequires:	gomp-devel
 BuildRequires:	pkgconfig(libtiff-4)
@@ -51,4 +52,3 @@ autoreconf -fiv
 %{_bindir}/enfuse
 %{_mandir}/man1/enblend.1.*
 %{_mandir}/man1/enfuse.1.*
-
