@@ -4,7 +4,7 @@ Version:	4.2
 Release:	7
 License:	GPLv2+
 Group:		Graphics
-Url:		http://enblend.sourceforge.net
+Url:		https://enblend.sourceforge.net
 Source0:	http://downloads.sourceforge.net/project/enblend/enblend-enfuse/enblend-enfuse-%{version}/enblend-enfuse-%{version}.tar.gz
 Patch0:		enblend-enfuse-4.2-limits.patch
 BuildRequires:	boost-devel
