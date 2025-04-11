@@ -1,7 +1,7 @@
 Summary:	Tool for compositing images
 Name:		enblend
 Version:	4.2
-Release:	7
+Release:	8
 License:	GPLv2+
 Group:		Graphics
 Url:		https://enblend.sourceforge.net
@@ -18,7 +18,8 @@ BuildRequires:	vigra-devel
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(libjpeg)
 BuildRequires:	pkgconfig(gsl)
-BuildRequires:	pkgconfig(IlmBase)
+#BuildRequires:	pkgconfig(IlmBase)
+BuildRequires:	pkgconfig(Imath)
 BuildRequires:	pkgconfig(OpenEXR)
 BuildRequires:	texlive-pdftex.bin
 BuildRequires:	texlive-latex.bin
